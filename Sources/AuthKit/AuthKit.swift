@@ -200,6 +200,7 @@ public class AuthKit {
     public func unauthenticate() throws {
         try enclave?.removeAllObjects()
         try keychain?.removeAllObjects()
+        setupBearerAuthorization()
         NotificationCenter.default.post(name: .unauthenticated, object: nil)
     }
     
